@@ -1,0 +1,9 @@
+desc
+1 = readfile C:\Users\Dori\CLionProjects\task33\input_file.txt
+2 = writefile C:\Users\Dori\CLionProjects\task33\output_file.txt
+3 = sort
+4 = grep input_file.txt word
+5 = replace Hello Hi
+6 = dump C:\Users\Dori\CLionProjects\task33\dump_file.txt
+csed
+1 -> 3 -> 4 -> 2
