@@ -1,0 +1,3 @@
+C:/Users/Dori/CLionProjects/task33/cmake-build-debug/CMakeFiles/task33.dir
+C:/Users/Dori/CLionProjects/task33/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Dori/CLionProjects/task33/cmake-build-debug/CMakeFiles/rebuild_cache.dir
