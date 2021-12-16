@@ -10,7 +10,10 @@
 #include <memory>
 #ifndef TASK_33_PARSEWORKERS_H
 #define TASK_33_PARSEWORKERS_H
-void create_worker(const std::string& name,std::map<int,std::vector<std::string>> blocks,int number, std::vector<std::shared_ptr<Worker>> &workers);
-std::vector<std::shared_ptr<Worker>> ParseWorkers (const std::string& filename,std::map<int,std::vector<std::string>> blocks);
+
+using namespace std;
+
+void create_worker(const string& name,map<int,vector<string>> blocks,int number, vector<shared_ptr<Worker>> &workers);
+vector<shared_ptr<Worker>> ParseWorkers (const string& filename,map<int,vector<string>> blocks);
 
 #endif //TASK_33_PARSEWORKERS_H
