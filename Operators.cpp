@@ -8,30 +8,30 @@
 
 using namespace std;
 
-    void Readfile::run(std::vector<std::vector<std::string>> &in,std::vector<std::vector<std::string>> &out) {
-    std::ifstream in_file (in_file_name);
-    std::string line;
+    void Readfile::run(vector<vector<string>> &in,vector<vector<string>> &out) {
+    ifstream in_file (in_file_name);
+    string line;
 
     if(in_file.is_open()){
 
         while(getline(in_file,line)){
 
-            std::istringstream ss(line);
-            std::istream_iterator<std::string> begin(ss), end;
+            istringstream ss(line);
+            istream_iterator<string> begin(ss), end;
             //putting all the tokens in the vector
-            std::vector<std::string> arrayTokens(begin, end);
+            vector<string> arrayTokens(begin, end);
             in.push_back(arrayTokens);
 
         }
     }
     else{
-        throw std::string("File is not open! \n")+in_file_name;
+        throw runtime_error("File is not open! \n");
     }
     in_file.close();
 }
 
-    void Writefile::run(std::vector<std::vector<std::string>> &in,std::vector<std::vector<std::string>> &out) {
-    std::ofstream out_file(out_file_name);
+    void Writefile::run(vector<vector<string>> &in,vector<vector<string>> &out) {
+    ofstream out_file(out_file_name);
     for(auto & string : in){
         for(auto & word : string){
             out_file << word << " ";
@@ -41,7 +41,7 @@ using namespace std;
     out_file.close();
 }
 
-    void Grep::run(std::vector<std::vector<std::string>> &in,std::vector<std::vector<std::string>> &out) {
+    void Grep::run(vector<vector<string>> &in,vector<vector<string>> &out) {
 
     for(auto & string : in) {
         bool word_not_exist=true;
@@ -58,14 +58,14 @@ using namespace std;
     in=out;
 }
 
-    void Sort::run(std::vector<std::vector<std::string>> &in,std::vector<std::vector<std::string>> &out) {
+    void Sort::run(vector<vector<string>> &in,vector<vector<string>> &out) {
 
     for(auto & string : in) {
-        std::sort(string.begin(), string.end());
+        sort(string.begin(), string.end());
     }
 }
 
-    void Replace::run(std::vector<std::vector<std::string>> &in,std::vector<std::vector<std::string>> &out) {
+    void Replace::run(vector<vector<string>> &in,vector<vector<string>> &out) {
     for(auto & string : in) {
 
         for (auto & word : string) {
@@ -79,8 +79,8 @@ using namespace std;
     in=out;
 }
 
-    void Dump::run(std::vector<std::vector<std::string>> &in,std::vector<std::vector<std::string>> &out) {
-    std::ofstream out_file(out_file_name);
+    void Dump::run(vector<vector<string>> &in,vector<vector<string>> &out) {
+    ofstream out_file(out_file_name);
     for(auto & string : in){
         for(auto & word : string){
             out_file << word << " ";
@@ -89,3 +89,4 @@ using namespace std;
     }
     out_file.close();
 }
+
