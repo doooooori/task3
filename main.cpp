@@ -4,18 +4,20 @@
 #include <map>
 #include <memory>
 
+using namespace std;
+
 int main() {
 
-    std::map<int,std::vector<std::string>> blocks;
-    std::vector<std::shared_ptr<Worker>> workers;
-    std::vector<std::vector<std::string>> vin;
-    std::vector<std::vector<std::string>> vout;
+    map<int,vector<string>> blocks;
+    vector<shared_ptr<Worker>> workers;
+    vector<vector<string>> vin;
+    vector<vector<string>> vout;
 
     try{
-        workers = ParseWorkers(R"(C:\Users\Dori\CLionProjects\task33\workflowR2.txt)",blocks);
+        workers = ParseWorkers(R"(workflowR2.txt)",blocks);
     }
-    catch (const std::string  ex){
-        std::cout<<ex<<std::endl;
+    catch (const string ex){
+        cout<<ex<<endl;
         return -1;
     }
 
@@ -23,8 +25,8 @@ int main() {
         try {
             c->run(vin, vout);
         }
-        catch (const std::string  ex){
-            std::cout<<ex<<std::endl;
+        catch (const string ex){
+            cout<<ex<<endl;
             return -2;
         }
     }
